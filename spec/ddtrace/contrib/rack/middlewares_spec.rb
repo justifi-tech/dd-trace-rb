@@ -39,8 +39,8 @@ RSpec.describe Datadog::Contrib::Rack::TraceMiddleware do
 
         it do
           expect(env).to include(
-            datadog_rack_request_span: kind_of(Datadog::Span),
-            'datadog.rack_request_span' => kind_of(Datadog::Span)
+            datadog_rack_request_span: kind_of(Datadog::SpanOperation),
+            'datadog.rack_request_span' => kind_of(Datadog::SpanOperation)
           )
         end
       end
