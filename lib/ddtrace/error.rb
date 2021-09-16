@@ -74,6 +74,7 @@ module Datadog
           # Ident stack trace for caller lines, to separate
           # them from the main error lines.
           trace[1..-1].each do |line|
+            next if "lib/".include?(line)
             backtrace << "\n\tfrom "
             backtrace << line
           end
