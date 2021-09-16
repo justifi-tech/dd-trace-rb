@@ -45,7 +45,7 @@ module Datadog
           causes[cause] = true
         end
 
-        backtrace
+        backtrace.split("\n").reject {|line| line=~ /lib\//} # temp removing lib stacks
       end
 
       # Outputs the following format for exceptions:
